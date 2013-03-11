@@ -1,0 +1,13 @@
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\bin\Debug\RememberMe.exe
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\bin\Debug\RememberMe.pdb
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\MainWindow.baml
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\App.g.cs
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\RememberMe_MarkupCompile.cache
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\RememberMe.g.resources
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\F9S1.RememberMe.Properties.Resources.resources
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\RememberMe.exe
+C:\Users\Pavilion\AppData\Local\Temporary Projects\RememberMe\obj\x86\Debug\RememberMe.pdb

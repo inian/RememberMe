@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="F9S1.RememberMe.Alarm" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAUAAACABAAAAhAAAAAIAAACGAEAAAQAAA=</HashCode>
+      <FileName>Alarm.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.AlarmCheck">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="F9S1.RememberMe.AlarmCheck.timeCheck" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>AlarmCheck.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAgAAAAgAAAAAAEAEAAAAAAAIAAA=</HashCode>
+      <FileName>AlarmCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.App" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Controller" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAACAAAQAEAAYBAAAAkAAADiAACABABAAQBAAAAKAI=</HashCode>
+      <FileName>Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Export" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Export.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.KeyboardHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAAAAAAABCAAAAAAAAAAQAQAQBAAACAA=</HashCode>
+      <FileName>Hotkey.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="F9S1.RememberMe.MainWindow" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kkQQVAABxgEAAIAKA3IQCFiEIEggAAgmQAogABAMIAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Operations" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAACgAEAACABACAAAAAQASoDAhACAAAABACAAAEAI=</HashCode>
+      <FileName>Operations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Parser" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAgABAACBAAQAAAAAAAAAYEAAAgABCAAAgo=</HashCode>
+      <FileName>Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Storage" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAACAAAACIAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Storage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Task" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAEAABQBBEkYIAQBCAAABQAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Tester" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAhAAAAAAABAACAEAgBAAQAAIAAAAAIAAJAACQAAAAA=</HashCode>
+      <FileName>Tester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Utility" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABACARACgQCQAABUAAAQCQCYAAgEBAggAAAEAABQA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Properties.Resources" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQBAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="F9S1.RememberMe.Properties.Settings" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="F9S1.RememberMe.timeCheck" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AlarmCheck.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

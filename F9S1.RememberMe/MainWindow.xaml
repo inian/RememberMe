@@ -1,0 +1,132 @@
+﻿<Window x:Class="F9S1.RememberMe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Remember Me" Height="375" Width="524" Loaded="Window_Loaded" Closing="OnClose" StateChanged="OnStateChanged" IsVisibleChanged="OnIsVisibleChanged" Icon="/F9S1.RememberMe;component/Logo1.png" WindowStyle="SingleBorderWindow" ResizeMode="CanResize">
+    <Window.CommandBindings>
+        <CommandBinding Command="Undo"
+                        CanExecute="CommandBinding_CanExecute"
+                        Executed="undoExecuted"/>
+        <CommandBinding Command="Redo"
+                        CanExecute="CommandBinding_CanExecute"
+                        Executed="redoExecuted"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="Undo" Key="Z" Modifiers="Ctrl"/>
+        <KeyBinding Command="Redo" Key="Y" Modifiers="Ctrl"/>
+    </Window.InputBindings>
+    <Window.Resources>
+        <!-- This style is used for buttons, to remove the WPF default 'animated' mouse over effect -->
+        <Style x:Key="NoMouseOverNoBorder" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="4"
+                            Padding="4,2" 
+                            BorderBrush="Transparent"
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style x:Name="toggle_style" TargetType="ToggleButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Image Name="img" Source="/F9S1.RememberMe;component/unstar.png" Width="20"></Image>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="/F9S1.RememberMe;component/starred.png"></Setter>
+                                <Setter TargetName="img" Property="Width" Value="20"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="myDataGridStyle">
+            <Style.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF2175B7" />
+               </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/F9S1.RememberMe;component/Images/large_Abstract_Dark_Gray_Paper_Rape_Wallpaper_86207.jpg" />
+        </Grid.Background>
+        <TextBox Height="220" HorizontalAlignment="Left" Margin="12,51,0,0" Name="helpBox" VerticalAlignment="Top" Width="479" Visibility="Collapsed" IsEnabled="True" IsReadOnly="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" />
+        <Label Margin="12,0,12,12" Name="displayBox" Foreground="#FFEB1919" FontWeight="Bold" Height="49" VerticalAlignment="Bottom" />
+        <TextBox Margin="12,0,12,65" Name="inputBox" KeyDown="inputBox_KeyDown" Foreground="White" TextChanged="inputBox_TextChanged" PreviewKeyDown="inputBox_PreviewKeyDown" Height="52" VerticalAlignment="Bottom" IsUndoEnabled="False" GotFocus="inputBox_GotFocus" Opacity="1" FontWeight="Bold" SelectionBrush="#FFAAAAAA">
+            <TextBox.Background>
+                <SolidColorBrush />
+            </TextBox.Background>
+        </TextBox>
+        <DataGrid Style="{StaticResource myDataGridStyle}" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="12,51,12,124" Name="dataGrid1" Foreground="White" BorderBrush="Black" CanUserDeleteRows="False" GridLinesVisibility="None" CellEditEnding="dataGrid1_CellEditEnding" BeginningEdit="dataGrid1_BeginningEdit" Opacity="1" Background="{x:Null}" LoadingRow="dataGrid1_LoadingRow" HeadersVisibility="Column" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden" FontWeight="Normal">
+            <!--<DataGrid.ColumnHeaderStyle>
+                <Style TargetType="Control">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>-->
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="  ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ToggleButton IsChecked="{Binding Path=IsStarred}" Click="ToggleButton_Click">
+                            </ToggleButton>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Details" Binding="{Binding Details}" IsReadOnly="True" MinWidth="230"/>
+                <DataGridTextColumn Header="Deadline" Binding="{Binding DisplayDeadline}" MinWidth="130"/>
+                <DataGridTextColumn Header="Label" Binding="{Binding Labels}" MinWidth="60"/>
+               <!-- <DataGridCheckBoxColumn Header="Archived" Binding="{Binding IsArchived}" />-->
+                <DataGridTemplateColumn Header="    ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="Transparent" Width="20" BorderBrush="White" Click="Archive_Button_Click">
+                                <Image Source="/F9S1.RememberMe;component/archive.png" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="    ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Background="Transparent" Width="20" BorderBrush="White" Click="Delete_Button_Click">
+                                <Image Source="/F9S1.RememberMe;component/delete.png" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <PasswordBox Height="23" Margin="311,9,0,0" Name="passwordBox1" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Left" Width="142" IsTabStop="False" />
+        <Label Content="Password" FontSize="13" FontWeight="Bold" Height="26" Margin="236,5,198,0" Name="passwordLabel" VerticalAlignment="Top" VerticalContentAlignment="Center" Foreground="#FF5BB82D" Visibility="Collapsed" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="88,9,0,0" Name="userBox" VerticalAlignment="Top" Width="142" Visibility="Collapsed" PreviewKeyDown="userBox_PreviewKeyDown" IsTabStop="False" />
+        <Label Content="Username" FontSize="13" FontWeight="Bold" Height="26" HorizontalAlignment="Left" Margin="12,6,0,0" Name="userLabel" VerticalAlignment="Top" Width="73" Foreground="#FF6CB548" Visibility="Collapsed" />
+        <Button Style="{StaticResource NoMouseOverNoBorder}" Height="40" HorizontalAlignment="Right" Margin="0,5,6,0" Name="syncButton" VerticalAlignment="Top" Width="40" Foreground="#FF62B43A" FontWeight="Bold" Click="syncButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/F9S1.RememberMe;component/Images/g_normal.png" />
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource NoMouseOverNoBorder}" Height="40" HorizontalAlignment="Right" Margin="0,5,56,0" Name="helpButton" VerticalAlignment="Top" Width="40" Foreground="#FF42B72D" FontWeight="Bold" Visibility="Visible" Click="helpButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/F9S1.RememberMe;component/Images/help.png" />
+            </Button.Background>
+        </Button>
+        <Button Content="Done" Height="23" HorizontalAlignment="Left" Margin="229,288,0,0" Name="doneButton" VerticalAlignment="Top" Width="75" Visibility="Collapsed" Click="doneButton_Click" />
+    </Grid>
+</Window>

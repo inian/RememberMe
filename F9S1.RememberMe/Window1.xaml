@@ -1,0 +1,8 @@
+﻿<Window x:Class="F9S1.RememberMe.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window1" Height="105" Width="433">
+    <Grid>
+        <TextBox Height="40" HorizontalAlignment="Left" Margin="24,17,0,0" Name="inputBox" VerticalAlignment="Top" Width="360" KeyDown="inputBox_KeyDown" />
+    </Grid>
+</Window>

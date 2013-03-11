@@ -1,0 +1,29 @@
+clear
+add submission @Monday #work
+add test1
+add test1
+test1
+test2 @Thurs
+test2 @thu #home
+test 2 @ thu # home
+add;study;tom;work;high
+label add study
+edit;study;tom;study;high
+overslept
+sleep for some time 
+archive;sleep for some time;
+undo
+redo
+add;school
+add;homework;friday
+add;sick;;;high
+delete;sick
+archive;test1
+bored @friday
+finsh sem @friday 6 pm #school
+submit 2271 @friday 4 #school #work
+set alarm @ 08-11-2020 18:23
+edit setalarm @
+edit sleep for some time #work
+undo
+display
